@@ -44,13 +44,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
         
         
-        commentBar.inputTextView.text = ""
+        commentBar.inputTextView.text = nil
         showsCommentBar = false
         becomeFirstResponder()
         commentBar.inputTextView.resignFirstResponder()
         
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         commentBar.inputTextView.placeholder = "Add a comment..."
@@ -155,7 +155,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @objc func keyboardWillBeHidden(note: Notification){
-        commentBar.inputTextView.text = nil
         showsCommentBar = false
         becomeFirstResponder()
     }
